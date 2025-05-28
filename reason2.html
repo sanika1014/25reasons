@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25 Reasons to Be With Me</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8d7e2; /* Soft pastel pink background */
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        .header {
+            font-size: 3em;
+            color: #e91e63; /* Bright pink */
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        .reason {
+            background-color: #fff; /* White background for Reason #2 */
+            border: 1px solid #f8a5c2; /* Soft pink border */
+            border-radius: 10px;
+            padding: 30px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .reason:hover {
+            transform: scale(1.05);
+        }
+        .reason p {
+            font-size: 1.4em;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        .countdown {
+            font-size: 1.8em;
+            color: #ff6f61; /* Light pinkish color for countdown */
+            font-weight: bold;
+            margin-top: 30px;
+        }
+        .footer {
+            font-size: 1.2em;
+            color: #aaaaaa;
+            margin-top: 40px;
+        }
+        .reason span {
+            color: #e91e63; /* Highlight Reason #2 text with a bright pink color */
+        }
+        .emoji {
+            font-size: 1.4em; /* Set emoji size to match text size */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        25 Reasons to Be With Me
+    </div>
+
+    <!-- Reason #2 -->
+    <div class="reason">
+        <p><span>Reason #2:</span> You’re the only person who never shares his food with me... but don’t worry, I’m still the one who makes extra for you, even though I know I’ll eat it all first if you’re not around. <span class="emoji">🍕😜</span></p>
+        <p>But hey, with your birthday just 24 days away, I guess I’ll be nice and save you a bite... maybe. <span class="emoji">🎂🤷‍♀️</span></p>
+    </div>
+
+    <div class="countdown" id="countdown">
+        Next Reason: Loading...
+    </div>
+
+    <div class="footer">
+        Don't forget to check back at midnight for the next reason!
+    </div>
+
+    <script>
+        function updateCountdown() {
+            var now = new Date();
+            var nextMidnight = new Date();
+            nextMidnight.setHours(24, 0, 0, 0);  // Set to next midnight (12:00 AM)
+            
+            var timeDiff = nextMidnight - now;
+            if (timeDiff <= 0) {
+                timeDiff = 86400000; // If time is already past midnight, reset to 24 hours
+            }
+
+            var hours = Math.floor(timeDiff / (1000 * 60 * 60));
+            var minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML =
+                "Next Reason in: " + hours + "h " + minutes + "m " + seconds + "s";
+        }
+
+        setInterval(updateCountdown, 1000);  // Update every second
+        updateCountdown();  // Initial countdown display
+    </script>
+
+</body>
+</html>
