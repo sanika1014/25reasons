@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25 Reasons to Be With Me</title>
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif;
+            background-color: #e0f7fa; /* light cyan background */
+            color: #003366; /* dark blue text */
+            text-align: center;
+            padding: 20px;
+        }
+        .header {
+            font-size: 3em;
+            color: #0077b6; /* strong blue */
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        .reason {
+            background-color: #ffffff;
+            border: 2px solid #90e0ef;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .reason:hover {
+            transform: scale(1.03);
+        }
+        .reason p {
+            font-size: 1.4em;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        .countdown {
+            font-size: 1.8em;
+            color: #023e8a;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+        .footer {
+            font-size: 1.2em;
+            color: #666;
+            margin-top: 40px;
+        }
+        .reason span {
+            color: #0077b6;
+        }
+        .emoji {
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        25 Reasons to Be With Me
+    </div>
+
+    <!-- Reason #5 -->
+    <div class="reason">
+        <p><span>Reason #5:</span> Because I’ve watched you leave for tennis with more excitement than you show when you see me. 🎾😒</p>
+        <p>You love tennis more than sharing fries — but still won’t take me to play! What if I’m secretly a pro? Or at least good enough to trip over the net dramatically? 😂</p>
+        <p>Anyway, one day I will crash your match, steal your racket, and force you to be my doubles partner. Game on, baby. 💪🏽💕</p>
+    </div>
+
+    <div class="countdown" id="countdown">
+        Next Reason: Loading...
+    </div>
+
+    <div class="footer">
+        Don't forget to check back at midnight for the next reason!
+    </div>
+
+    <script>
+        function updateCountdown() {
+            var now = new Date();
+            var nextMidnight = new Date();
+            nextMidnight.setHours(24, 0, 0, 0);
+
+            var timeDiff = nextMidnight - now;
+            if (timeDiff <= 0) {
+                timeDiff = 86400000;
+            }
+
+            var hours = Math.floor(timeDiff / (1000 * 60 * 60));
+            var minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML =
+                "Next Reason in: " + hours + "h " + minutes + "m " + seconds + "s";
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+
+</body>
+</html>
