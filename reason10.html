@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25 Reasons to Be With Me</title>
+    <style>
+        body {
+            font-family: 'Trebuchet MS', sans-serif;
+            background-color: #e0f7f1; /* Soft mint */
+            color: #2e2e2e; /* Charcoal grey */
+            text-align: center;
+            padding: 20px;
+        }
+        .header {
+            font-size: 3em;
+            color: #00796b; /* Deep minty green */
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+        .reason {
+            background-color: #ffffff;
+            border: 2px dashed #80cbc4; /* Light mint border */
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px auto;
+            width: 85%;
+            max-width: 620px;
+            box-shadow: 0 0 20px rgba(0, 121, 107, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .reason:hover {
+            transform: scale(1.03);
+        }
+        .reason p {
+            font-size: 1.3em;
+            line-height: 1.7;
+            margin: 18px 0;
+        }
+        .countdown {
+            font-size: 1.8em;
+            color: #004d40;
+            font-weight: bold;
+            margin-top: 35px;
+        }
+        .footer {
+            font-size: 1.1em;
+            color: #777777;
+            margin-top: 40px;
+        }
+        .reason span {
+            color: #00796b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        25 Reasons to Be With Me
+    </div>
+
+    <!-- Reason #10 -->
+    <div class="reason">
+        <p><span>Reason #10:</span> You wake up early... and never wake me up. Rude. 😴</p>
+        <p>But the moment I wake up? I’m the one calling you like some human alarm clock with emotional attachment. 📞❤️</p>
+        <p>And yet you have the audacity to go, “Tu kabhi jaldi uthti nahi hai. Aalsi. Dekho log kaise hote hain.”</p>
+        <p>Reason to be with me? Because only I can take the taunts and still make sure you don’t oversleep. 🌞🙃</p>
+    </div>
+
+    <div class="countdown" id="countdown">
+        Next Reason: Loading...
+    </div>
+
+    <div class="footer">
+        Tomorrow’s reason drops earlier than I do from my bed. Maybe.
+    </div>
+
+    <script>
+        function updateCountdown() {
+            var now = new Date();
+            var nextMidnight = new Date();
+            nextMidnight.setHours(24, 0, 0, 0);
+
+            var timeDiff = nextMidnight - now;
+            if (timeDiff <= 0) {
+                timeDiff = 86400000;
+            }
+
+            var hours = Math.floor(timeDiff / (1000 * 60 * 60));
+            var minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML =
+                "Next Reason in: " + hours + "h " + minutes + "m " + seconds + "s";
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+
+</body>
+</html>
