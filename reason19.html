@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25 Reasons to Be With Me</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #fce4ec; /* Soft pink */
+            color: #37474f; /* Deep grey */
+            text-align: center;
+            padding: 20px;
+        }
+        .header {
+            font-size: 3em;
+            color: #ec407a; /* Bright pink */
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+        .reason {
+            background-color: #fff0f5; /* Light blush box */
+            border: 2px dashed #f8bbd0; /* Pastel pink border */
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px auto;
+            width: 85%;
+            max-width: 620px;
+            box-shadow: 0 0 20px rgba(236, 64, 122, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .reason:hover {
+            transform: scale(1.03);
+        }
+        .reason p {
+            font-size: 1.3em;
+            line-height: 1.7;
+            margin: 18px 0;
+        }
+        .countdown {
+            font-size: 1.8em;
+            color: #c2185b;
+            font-weight: bold;
+            margin-top: 35px;
+        }
+        .footer {
+            font-size: 1.1em;
+            color: #777777;
+            margin-top: 40px;
+        }
+        .reason span {
+            color: #ec407a;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        25 Reasons to Be With Me
+    </div>
+
+    <!-- Reason #19 -->
+    <div class="reason">
+        <p><span>Reason #19:</span> I click 100 perfect pics of you. You click 2 blurry ones of me. 😐📸</p>
+        <p>I’ll find the angles, fix the lighting, take candids, hype you up — basically full-time photographer.</p>
+        <p>And you? “Bas ache hain yeh na?” Bro, I’m blinking in BOTH. 😭</p>
+        <p>Reason to be with me? Because even when you fail at clicking my pics, I still keep posing... for you. 😤❤️</p>
+    </div>
+
+    <div class="countdown" id="countdown">
+        Next Reason: Loading...
+    </div>
+
+    <div class="footer">
+        Tomorrow’s reason will be photogenic. Unlike your pics of me.
+    </div>
+
+    <script>
+        function updateCountdown() {
+            var now = new Date();
+            var nextMidnight = new Date();
+            nextMidnight.setHours(24, 0, 0, 0);
+
+            var timeDiff = nextMidnight - now;
+            if (timeDiff <= 0) {
+                timeDiff = 86400000;
+            }
+
+            var hours = Math.floor(timeDiff / (1000 * 60 * 60));
+            var minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML =
+                "Next Reason in: " + hours + "h " + minutes + "m " + seconds + "s";
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+
+</body>
+</html>
