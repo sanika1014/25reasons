@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25 Reasons to Be With Me</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f9fbe7; /* Soft cream */
+            color: #33691e; /* Earthy green text */
+            text-align: center;
+            padding: 20px;
+        }
+        .header {
+            font-size: 3em;
+            color: #558b2f; /* Sage green */
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+        .reason {
+            background-color: #edf7ed; /* Light sage box */
+            border: 2px dashed #aed581; /* Light green border */
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px auto;
+            width: 85%;
+            max-width: 620px;
+            box-shadow: 0 0 20px rgba(85, 139, 47, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .reason:hover {
+            transform: scale(1.03);
+        }
+        .reason p {
+            font-size: 1.3em;
+            line-height: 1.7;
+            margin: 18px 0;
+        }
+        .countdown {
+            font-size: 1.8em;
+            color: #33691e;
+            font-weight: bold;
+            margin-top: 35px;
+        }
+        .footer {
+            font-size: 1.1em;
+            color: #888888;
+            margin-top: 40px;
+        }
+        .reason span {
+            color: #558b2f;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        25 Reasons to Be With Me
+    </div>
+
+    <!-- Reason #22 -->
+    <div class="reason">
+        <p><span>Reason #22:</span> You forget a lot. But somehow, you remember what actually matters. 😌</p>
+        <p>You forget what I told you this morning. You reply with "accha" to my paragraphs. You tease me 24/7.</p>
+        <p>But when something’s actually important to me — you just know. You show up. You listen. You care. Even if you don’t say it.</p>
+        <p>Reason to be with me? Because under all the chaos... you’re the calm I didn’t expect but always needed. 🫶</p>
+    </div>
+
+    <div class="countdown" id="countdown">
+        Next Reason: Loading...
+    </div>
+
+    <div class="footer">
+        Tomorrow’s reason might be dramatic. But this one is just real.
+    </div>
+
+    <script>
+        function updateCountdown() {
+            var now = new Date();
+            var nextMidnight = new Date();
+            nextMidnight.setHours(24, 0, 0, 0);
+
+            var timeDiff = nextMidnight - now;
+            if (timeDiff <= 0) {
+                timeDiff = 86400000;
+            }
+
+            var hours = Math.floor(timeDiff / (1000 * 60 * 60));
+            var minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML =
+                "Next Reason in: " + hours + "h " + minutes + "m " + seconds + "s";
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+
+</body>
+</html>
