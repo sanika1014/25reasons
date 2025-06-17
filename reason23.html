@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25 Reasons to Be With Me</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #fffde7; /* Light yellow */
+            color: #263238; /* Charcoal text */
+            text-align: center;
+            padding: 20px;
+        }
+        .header {
+            font-size: 3em;
+            color: #fbc02d; /* Bold yellow */
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+        .reason {
+            background-color: #fff9c4; /* Pale yellow box */
+            border: 2px dashed #fdd835; /* Yellow border */
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px auto;
+            width: 85%;
+            max-width: 620px;
+            box-shadow: 0 0 20px rgba(251, 192, 45, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .reason:hover {
+            transform: scale(1.03);
+        }
+        .reason p {
+            font-size: 1.3em;
+            line-height: 1.7;
+            margin: 18px 0;
+        }
+        .countdown {
+            font-size: 1.8em;
+            color: #f9a825;
+            font-weight: bold;
+            margin-top: 35px;
+        }
+        .footer {
+            font-size: 1.1em;
+            color: #777777;
+            margin-top: 40px;
+        }
+        .reason span {
+            color: #fbc02d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        25 Reasons to Be With Me
+    </div>
+
+    <!-- Reason #23 -->
+    <div class="reason">
+        <p><span>Reason #23:</span> You’re more obsessed with manga than with me. 🥲</p>
+        <p>I’ll say “Talk to me,” and you’ll say “One sec… just one more chapter.” That “one sec” lasts 2 hours. 😐</p>
+        <p>I compete with fictional storylines, characters with blue hair, and emotional flashbacks — and I’m losing. BADLY.</p>
+        <p>Reason to be with me? Because even when you ignore me for your manga, I still let you read. And somehow, I still like you. 😤📖</p>
+    </div>
+
+    <div class="countdown" id="countdown">
+        Next Reason: Loading...
+    </div>
+
+    <div class="footer">
+        If tomorrow’s reason gets ignored because of manga, I swear.
+    </div>
+
+    <script>
+        function updateCountdown() {
+            var now = new Date();
+            var nextMidnight = new Date();
+            nextMidnight.setHours(24, 0, 0, 0);
+
+            var timeDiff = nextMidnight - now;
+            if (timeDiff <= 0) {
+                timeDiff = 86400000;
+            }
+
+            var hours = Math.floor(timeDiff / (1000 * 60 * 60));
+            var minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML =
+                "Next Reason in: " + hours + "h " + minutes + "m " + seconds + "s";
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+
+</body>
+</html>
