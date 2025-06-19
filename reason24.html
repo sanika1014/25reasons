@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reason #24 – 25 Reasons to Be With Me</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f3f1; /* soft cream background */
+            color: #3e0e10; /* deep maroon text */
+            text-align: center;
+            padding: 20px;
+        }
+        .header {
+            font-size: 3em;
+            color: #8b1e3f; /* maroon-pink header */
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        .reason {
+            background-color: #fff5f6; /* light maroon-cream panel */
+            border: 1px solid #e6b8b9; 
+            border-radius: 10px;
+            padding: 30px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 12px rgba(139, 30, 63, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .reason:hover {
+            transform: scale(1.05);
+        }
+        .reason p {
+            font-size: 1.4em;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        .countdown {
+            font-size: 1.8em;
+            color: #a8324a; 
+            font-weight: bold;
+            margin-top: 30px;
+        }
+        .footer {
+            font-size: 1.2em;
+            color: #999;
+            margin-top: 40px;
+        }
+        .reason span {
+            color: #8b1e3f;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        25 Reasons to Be With Me
+    </div>
+
+    <div class="reason">
+        <p><span>Reason #24:</span> We fight. We argue. We roast each other like it’s a sport. But somehow... we still end up right back with each other. 🫠</p>
+        <p>It doesn’t matter if I’m annoyed, yelling, or full dramatic mode activated — 10 minutes later I’m asking if you ate, wyd, and you're saying "accha samjha” like nothing happened.</p>
+        <p>This thing we have? It’s not perfect. But it’s <strong>ours</strong>. And I wouldn’t want it any other way.</p>
+    </div>
+
+    <div class="countdown" id="countdown">
+        Final Reason: Loading...
+    </div>
+
+    <div class="footer">
+        Come back tomorrow for the finale 💥
+    </div>
+
+    <script>
+        function updateCountdown() {
+            var now = new Date();
+            var nextMidnight = new Date();
+            nextMidnight.setHours(24, 0, 0, 0); 
+
+            var timeDiff = nextMidnight - now;
+            if (timeDiff <= 0) {
+                timeDiff = 86400000;
+            }
+
+            var hours = Math.floor(timeDiff / (1000 * 60 * 60));
+            var minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML =
+                "Final Reason in: " + hours + "h " + minutes + "m " + seconds + "s";
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+
+</body>
+</html>
